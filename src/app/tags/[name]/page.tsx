@@ -8,8 +8,16 @@ import PageDot from "@/components/PageDot";
 import { useQuery } from "@tanstack/react-query";
 import { extractList, extractTotal, getTools, Tool } from "@/lib/api";
 
+function safeDecode(s = "") {
+  try {
+    return decodeURIComponent(s);
+  } catch {
+    return s.replace(/%20/g, " ");
+  }
+}
+
 function deslugify(s = "") {
-  return s.replace(/-/g, " ").trim();
+  return safeDecode(s).replace(/-/g, " ").trim();
 }
 
 function toTitleCase(s = "") {
