@@ -17,6 +17,20 @@ export const authOptions = {
   session: {
     strategy: "jwt" as const,
   },
+  callbacks: {
+    async jwt({ token, account }: any) {
+      // Lưu Google access_token vào JWT của NextAuth để dùng ở server
+      if (account?.access_token) {
+        (token as any).accessToken = account.access_token;
+      }
+      return token;
+    },
+    async session({ session, token }: any) {
+      // Đưa accessToken vào session để API server-side có thể truy cập
+      (session as any).accessToken = (token as any).accessToken;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
