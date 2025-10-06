@@ -41,7 +41,12 @@ export default function Hero({
   }, [input, onSearch]);
 
   return (
-    <header className="pt-15 pb-10 mt-15 border-b border-[#E5E7EB] bg-[linear-gradient(180deg,#fff,rgba(193,59,93,.08)_50%,#F9FAFB_100%)]">
+    <header
+      className="pt-15 pb-5 mt-15 border-b border-[#E5E7EB]"
+      style={{
+        background: "linear-gradient(180deg, #fff 0%, rgba(193,59,93,0.08) 50%, #F9FAFB 100%)",
+      }}
+    >
       <div className="mx-auto max-w-[1400px] px-5 text-center">
         <h1 className="text-4xl font-extrabold mb-2">
           <span className="text-[#C13B5D]">Hi</span>AGI AI TOOL DIRECTORY

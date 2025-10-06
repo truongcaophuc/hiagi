@@ -54,7 +54,8 @@ export default function ToolCard({
   return (
     <>
       <article
-        className="relative overflow-hidden rounded-[22px] border border-transparent [background:linear-gradient(#fff,#fff)_padding-box,linear-gradient(135deg,#F6B2C3,#FDE7ED)_border-box] shadow-[0_12px_34px_rgba(193,59,93,.16)] transition-transform duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_22px_44px_rgba(193,59,93,.22)] hover:saturate-[1.05] flex flex-col"
+        className="relative overflow-hidden rounded-[22px] border border-transparent shadow-[0_12px_34px_rgba(193,59,93,.16)] transition-transform duration-300 ease-[cubic-bezier(.22,.61,.36,1)] hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_22px_44px_rgba(193,59,93,.22)] hover:saturate-[1.05] flex flex-col"
+        style={{ background: "linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg,#F6B2C3,#FDE7ED) border-box" }}
         onClick={() => setOpen(true)}
         role="button"
         aria-label="Open tool details"
@@ -70,7 +71,7 @@ export default function ToolCard({
                 className="h-48 w-full object-cover"
               />
             ) : (
-              <div className="h-48 w-full bg-[linear-gradient(135deg,#FDE7ED,#fff)] flex items-center justify-center">
+              <div className="h-48 w-full flex items-center justify-center" style={{ background: "linear-gradient(135deg,#FDE7ED,#fff)" }}>
                 <span className="text-[#7e1f39] font-extrabold tracking-wider">No Image</span>
               </div>
             )}
@@ -103,7 +104,7 @@ export default function ToolCard({
                       className="h-12 w-12 rounded-full border border-slate-200 shadow-sm object-cover"
                     />
                   ) : (
-                    <div className="h-12 w-12 rounded-full border border-slate-200 shadow-sm bg-[linear-gradient(135deg,#FDE7ED,#fff)] flex items-center justify-center">
+                    <div className="h-12 w-12 rounded-full border border-slate-200 shadow-sm flex items-center justify-center" style={{ background: "linear-gradient(135deg,#FDE7ED,#fff)" }}>
                       <span className="text-[10px] text-[#7e1f39] font-extrabold tracking-wider">No Img</span>
                     </div>
                   )}
@@ -267,7 +268,7 @@ export default function ToolCard({
                       className="w-full border border-slate-200 object-cover"
                     />
                   ) : (
-                    <div className="w-full h-48 border border-slate-200 bg-[linear-gradient(135deg,#FDE7ED,#fff)] flex items-center justify-center">
+                    <div className="w-full h-48 border border-slate-200 flex items-center justify-center" style={{ background: "linear-gradient(135deg,#FDE7ED,#fff)" }}>
                       <span className="text-[#7e1f39] font-extrabold tracking-wider">No Image</span>
                     </div>
                   )}

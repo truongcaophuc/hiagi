@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
@@ -23,7 +23,7 @@ function Card({ item }: { item?: Item }) {
   if (!item) {
     return (
       <div className="relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-gray-100 h-[270px]">
-        <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.1s_infinite] [background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent)]" />
+        <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.1s_infinite]" style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent)" }} />
         <style>{`@keyframes shimmer { to { transform: translateX(100%); } }`}</style>
       </div>
     );
@@ -35,7 +35,7 @@ function Card({ item }: { item?: Item }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img className="h-40 w-full object-cover" src={item.image || item.thumb} alt={item.name} />
         ) : (
-          <div className="h-40 grid place-items-center bg-[linear-gradient(135deg,#FDE7ED,#fff)] text-[#7e1f39] font-extrabold">No Image</div>
+          <div className="h-40 grid place-items-center text-[#7e1f39] font-extrabold" style={{ background: "linear-gradient(135deg,#FDE7ED,#fff)" }}>No Image</div>
         )}
       </a>
       <div className="p-3">
@@ -165,7 +165,8 @@ export default function FavoriteSection({ filters, mode = "global", query }: { f
           <div className="text-center mt-4">
             <button
               onClick={() => setPage((p) => p + 1)}
-              className="px-5 py-3 rounded-xl font-extrabold text-[#2a0a14] shadow-[0_8px_24px_rgba(193,59,93,.25)] hover:shadow-[0_14px_34px_rgba(193,59,93,.35)] transition [background:linear-gradient(135deg,var(--brand),var(--brand-2))]"
+              className="px-5 py-3 rounded-xl font-extrabold text-[#2a0a14] shadow-[0_8px_24px_rgba(193,59,93,.25)] hover:shadow-[0_14px_34px_rgba(193,59,93,.35)] transition"
+              style={{ background: "linear-gradient(135deg,var(--brand),var(--brand-2))" }}
             >
               Load more
             </button>

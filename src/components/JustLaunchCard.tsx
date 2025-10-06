@@ -22,7 +22,7 @@ export default function JustLaunchCard({ item }: { item?: Item }) {
   if (!item) {
     return (
       <div className="relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-gray-100 h-[270px]">
-        <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.1s_infinite] [background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent)]" />
+        <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.1s_infinite]" style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent)" }} />
         <style>{`@keyframes shimmer { to { transform: translateX(100%); } }`}</style>
       </div>
     );
@@ -86,7 +86,7 @@ export default function JustLaunchCard({ item }: { item?: Item }) {
         }}
         className="bg-white border border-[#E5E7EB] rounded-2xl shadow overflow-hidden flex flex-col relative transition h-full hover:-translate-y-[2px] hover:border-[#F6B2C3] hover:shadow-lg cursor-pointer"
       >
-        <div className="relative h-40 bg-[linear-gradient(135deg,#FDE7ED,#fff)] flex items-center justify-center">
+        <div className="relative h-40 flex items-center justify-center" style={{ background: "linear-gradient(135deg,#FDE7ED,#fff)" }}>
           {item.thumb ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={item.thumb} alt={item.name} className="w-full h-full object-cover" />
